@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "lib": [
+            "ES2015",
+            "ES2016",
+            "DOM",
+            "ES2020.BigInt",
+            "ESNext.Array"
+        ]
+    },
+  }
