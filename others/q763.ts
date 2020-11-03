@@ -1,31 +1,25 @@
 // 763. 划分字母区间 https://leetcode-cn.com/problems/partition-labels/
 
 function partitionLabels(S: string): number[] {
-    const charMap = new Map();
+    let last = new Map();
     for (let i = 0; i < S.length; i++) {
-        let t = charMap.get(S[i])
-        if (t) {
-            let [min, max] = t;
-            if (i > max) {
-                max = i;
-            }
-            charMap.set(S[i], [min, max])
-        } else {
-            charMap.set(S[i], [i, i])
+        last.set(S[i], i)
+    }
+    let partition = [];
+    let start = 0, end = 0;
+    for (let i = 0; i < S.length; i++) {
+        end = Math.max(end, last.get(S[i]));
+        if (i == end) {
+            partition.push(end - start + 1);
+            start = end + 1;
         }
     }
-    const arr = new Array(S.length).fill(-1);
-    
-    charMap.forEach((p, k) => {
-        let [min, max] = p;
-        for (let i = min; i <= max; i++) {
-            arr[i]++;
-        }
-    })
-    console.log(arr.join('').split('0'))
-    return arr.slice(1, arr.length - 1).join('').split('00').map(v => v.length + 2)
+    return partition;
+
 };
 
-console.log(partitionLabels("ababcbacadefegdehijhklij"));
+// console.log(partitionLabels("ababcbacadefegdehijhklij"));
 
-console.log(partitionLabels("caedbdedda"))
+// console.log(partitionLabels("caedbdedda"))
+
+console.log(partitionLabels("dccccbaabe"))

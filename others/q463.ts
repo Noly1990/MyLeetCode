@@ -12,14 +12,11 @@ function islandPerimeter(grid: number[][]): number {
         } else if (grid[x - 1][y] === 0) {
             t++
         }
-
         if (y === 0) {
             t++;
         } else if (grid[x][y - 1] === 0) {
             t++;
         }
-
-
         if (x === m - 1) {
             t++;
         } else if (grid[x + 1][y] === 0) {
@@ -31,11 +28,8 @@ function islandPerimeter(grid: number[][]): number {
         } else if (grid[x][y + 1] === 0) {
             t++;
         }
-
-
         return t;
     }
-
     for (let i = 0; i < m; i++) {
         for (let j = 0; j < n; j++) {
             if (grid[i][j] === 1) {
