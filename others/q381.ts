@@ -28,12 +28,9 @@ class RandomizedCollection {
     remove(val: number): boolean {
         if (!this.index.has(val) || this.index.get(val)?.size === 0) return false;
         let index = this.index.get(val)?.values().next().value;
-        
         this.arr[index] = this.arr[this.arr.length -1];
-        
         this.index.get(this.arr[index])?.delete(this.arr.length -1)
         this.index.get(val)?.delete(index);
-
         if (index < this.arr.length- 1) {
             this.index.get(this.arr[index])?.add(index)
         }
