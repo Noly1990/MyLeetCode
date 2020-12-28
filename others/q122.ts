@@ -1,6 +1,6 @@
 // 买卖股票的最佳时机 II https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/
 
-namespace q122 {
+namespace Q122 {
     function maxProfit(prices: number[]): number {
         const sell = []; // 第几天卖
         const take = []; // 第几天持有
