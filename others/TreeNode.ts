@@ -1,5 +1,5 @@
 
-export default class TreeNode {
+class TreeNode {
     val: number
     left: TreeNode | null
     right: TreeNode | null
@@ -9,3 +9,4 @@ export default class TreeNode {
         this.right = (right === undefined ? null : right)
     }
 }
+

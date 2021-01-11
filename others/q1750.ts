@@ -1,5 +1,3 @@
-import TreeNode from "./TreeNode";
-
 // 1750 面试题 17.12. BiNode  https://leetcode-cn.com/problems/binode-lcci/
 function convertBiNode(root: TreeNode | null): TreeNode | null {
 
